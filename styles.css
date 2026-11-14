@@ -205,3 +205,52 @@ footer {
         padding: 30px 18px;
     }
 }
+
+/* CURIOSIDADES */
+.curiosidades {
+    background-color: #dceef8;
+    border-radius: 15px;
+}
+
+/* FUNDAMENTOS */
+.fundamentos {
+    background-color: white;
+    border-radius: 15px;
+}
+
+/* CUESTIONARIO */
+.cuestionario {
+    background-color: #dceef8;
+    border-radius: 15px;
+}
+
+.cuestionario p {
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #063970;
+}
+
+.cuestionario label {
+    display: inline-block;
+    margin: 6px 0;
+}
+
+.cuestionario button {
+    background-color: #087eae;
+    color: white;
+    padding: 13px 25px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.cuestionario button:hover {
+    background-color: #032b50;
+}
+
+#resultado {
+    color: #075080;
+    margin-top: 20px;
+}

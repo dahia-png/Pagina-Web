@@ -156,3 +156,130 @@
 
 </body>
 </html>
+
+    <section class="seccion curiosidades">
+    <h2>🤩 Curiosidades del voleibol</h2>
+
+    <div class="posiciones">
+        <div>
+            <h3>1895</h3>
+            <p>Fue el año en que William G. Morgan creó el voleibol.</p>
+        </div>
+
+        <div>
+            <h3>6 jugadores</h3>
+            <p>Cada equipo tiene seis jugadores en la cancha.</p>
+        </div>
+
+        <div>
+            <h3>Deporte olímpico</h3>
+            <p>El voleibol ingresó a los Juegos Olímpicos en 1964.</p>
+        </div>
+
+        <div>
+            <h3>El líbero</h3>
+            <p>Es un jugador especializado en defensa y recepción que utiliza un uniforme diferente.</p>
+        </div>
+    </div>
+</section>
+
+    <section class="seccion fundamentos">
+    <h2>🏐 Fundamentos técnicos del voleibol</h2>
+
+    <div class="posiciones">
+
+        <div>
+            <h3>1. Saque</h3>
+            <p>Es el golpe que permite iniciar el juego enviando el balón al campo contrario.</p>
+        </div>
+
+        <div>
+            <h3>2. Recepción</h3>
+            <p>Consiste en recibir el balón, generalmente después del saque del equipo contrario.</p>
+        </div>
+
+        <div>
+            <h3>3. Voleo</h3>
+            <p>Es una técnica que utiliza principalmente las manos y los dedos para dirigir el balón.</p>
+        </div>
+
+        <div>
+            <h3>4. Remate</h3>
+            <p>Es un golpe de ataque fuerte que busca conseguir un punto.</p>
+        </div>
+
+        <div>
+            <h3>5. Bloqueo</h3>
+            <p>Es una acción defensiva que busca detener o desviar el ataque del equipo contrario.</p>
+        </div>
+
+    </div>
+</section>
+
+    <section class="seccion cuestionario">
+    <h2>🧠 ¿Cuánto sabes de voleibol?</h2>
+
+    <form id="quiz">
+
+        <p>1. ¿Cuántos jugadores tiene cada equipo en la cancha?</p>
+        <label><input type="radio" name="p1" value="a"> 5 jugadores</label><br>
+        <label><input type="radio" name="p1" value="b"> 6 jugadores</label><br>
+        <label><input type="radio" name="p1" value="c"> 8 jugadores</label>
+
+        <br><br>
+
+        <p>2. ¿Quién creó el voleibol?</p>
+        <label><input type="radio" name="p2" value="a"> William G. Morgan</label><br>
+        <label><input type="radio" name="p2" value="b"> James Naismith</label><br>
+        <label><input type="radio" name="p2" value="c"> Pelé</label>
+
+        <br><br>
+
+        <p>3. ¿Cuántos toques puede realizar un equipo antes de pasar el balón?</p>
+        <label><input type="radio" name="p3" value="a"> Dos</label><br>
+        <label><input type="radio" name="p3" value="b"> Tres</label><br>
+        <label><input type="radio" name="p3" value="c"> Cuatro</label>
+
+        <br><br>
+
+        <p>4. ¿Cuál es la función principal del líbero?</p>
+        <label><input type="radio" name="p4" value="a"> Defensa y recepción</label><br>
+        <label><input type="radio" name="p4" value="b"> Realizar todos los saques</label><br>
+        <label><input type="radio" name="p4" value="c"> Ser el árbitro</label>
+
+        <br><br>
+
+        <button type="button" onclick="calificar()">Comprobar respuestas</button>
+
+        <h3 id="resultado"></h3>
+
+    </form>
+</section>
+
+<script>
+function calificar() {
+
+    let respuestas = {
+        p1: "b",
+        p2: "a",
+        p3: "b",
+        p4: "a"
+    };
+
+    let puntos = 0;
+
+    for (let pregunta in respuestas) {
+        let seleccion = document.querySelector(
+            'input[name="' + pregunta + '"]:checked'
+        );
+
+        if (seleccion && seleccion.value === respuestas[pregunta]) {
+            puntos++;
+        }
+    }
+
+    document.getElementById("resultado").textContent =
+        "Obtuviste " + puntos + " de 4 respuestas correctas. " +
+        (puntos === 4 ? "¡Excelente trabajo! 🏆" : "¡Sigue aprendiendo! 🏐");
+}
+</script>

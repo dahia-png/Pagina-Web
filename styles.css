@@ -1,94 +1,24 @@
-/* DISEÑO GENERAL */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    scroll-behavior: smooth;
-}
-
+/* COLORES GENERALES */
 body {
     font-family: Arial, sans-serif;
     background-color: #eef5fa;
-    color: rojo;
+    color: black;
 }
 
-/* ENCABEZADO */
-header {
-    background: linear-gradient(135deg, #063970, #087eae);
+/* TITULOS PRINCIPALES */
+h1, h2, h3 {
     color: white;
-    text-align: center;
-    padding: 45px 20px;
 }
 
-header h1 {
-    font-size: 40px;
-    letter-spacing: 3px;
-}
-
-header p {
-    margin-top: 12px;
-    font-size: 18px;
-}
-
-/* MENU */
-nav {
-    background-color: #032b50;
-    padding: 17px;
-}
-
-nav ul {
-    list-style: none;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 30px;
-}
-
-nav a {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-    transition: 0.3s;
-}
-
-nav a:hover {
-    color: #ffdc60;
-}
-
-/* BIENVENIDA */
-.bienvenida {
-    text-align: center;
-    padding: 55px 20px;
-    background-color: white;
-}
-
-.bienvenida h2 {
-    color: #087eae;
-    margin-bottom: 20px;
-    font-size: 28px;
-}
-
-.bienvenida p {
-    max-width: 800px;
-    margin: auto;
-    line-height: 1.8;
-}
-
-/* CONTENIDO */
-.contenedor {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 25px;
-    padding: 40px 20px;
-}
-
+/* RECUADROS PRINCIPALES */
 .article {
-    background-color: white;
+    background-color: #075080;
+    color: black;
     padding: 25px;
     width: 300px;
+    min-height: 270px;
     border-radius: 12px;
-    box-shadow: 0 4px 12px #00000020;
+    box-shadow: 0 4px 12px #00000030;
     border-top: 5px solid #08a6c9;
     transition: 0.3s;
 }
@@ -98,207 +28,48 @@ nav a:hover {
 }
 
 .article h2 {
-    color: #087eae;
+    color: white;
     margin-bottom: 15px;
 }
 
 .article p {
-    line-height: 1.7;
-}
-
-/* SECCIONES */
-.seccion {
-    padding: 45px 30px;
-    margin: 20px auto;
-    max-width: 1100px;
-}
-
-.seccion h2 {
-    color: #075080;
-    text-align: center;
-    margin-bottom: 25px;
-    font-size: 28px;
-}
-
-.seccion ul {
-    line-height: 2.2;
-    padding-left: 30px;
-}
-
-/* POSICIONES */
-.posiciones {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 20px;
-}
-
-.posiciones div {
-    background-color: white;
-    padding: 25px;
-    border-radius: 12px;
-    text-align: center;
-    box-shadow: 0 3px 10px #00000020;
-}
-
-.posiciones h3 {
-    color: #087eae;
+    color: black;
+    line-height: 1.8;
     margin-bottom: 12px;
 }
 
-/* GALERIA */
-.galeria {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 18px;
+/* TITULOS DE LAS SECCIONES */
+.seccion h2 {
+    color: white;
+    text-align: center;
+    margin-bottom: 25px;
 }
 
-.galeria img {
-    width: 100%;
-    height: 220px;
-    object-fit: cover;
+/* SUBTITULOS DE LAS TARJETAS */
+.posiciones h3 {
+    color: white;
+    margin-bottom: 12px;
+}
+
+/* TEXTO DE LAS TARJETAS */
+.posiciones div {
+    background-color: #075080;
+    color: black;
+    padding: 25px;
     border-radius: 12px;
-    transition: 0.3s;
-}
-
-.galeria img:hover {
-    transform: scale(1.04);
-}
-
-/* VIDEO */
-.video {
     text-align: center;
 }
 
-.video iframe {
-    width: 100%;
-    max-width: 700px;
-    height: 390px;
-    border: none;
-    border-radius: 15px;
-}
-
-/* PIE DE PAGINA */
-footer {
-    background-color: #032b50;
-    color: white;
-    text-align: center;
-    padding: 30px;
-    line-height: 2;
-}
-
-/* ADAPTACION A CELULARES */
-@media (max-width: 600px) {
-
-    header h1 {
-        font-size: 28px;
-    }
-
-    nav ul {
-        gap: 15px;
-    }
-
-    .video iframe {
-        height: 230px;
-    }
-
-    .seccion {
-        padding: 30px 18px;
-    }
-}
-
-/* CURIOSIDADES */
-.curiosidades {
-    background-color: #dceef8;
-    border-radius: 15px;
-}
-
-/* FUNDAMENTOS */
-.fundamentos {
-    background-color: white;
-    border-radius: 15px;
+.posiciones p {
+    color: black;
+    line-height: 1.7;
 }
 
 /* CUESTIONARIO */
-.cuestionario {
-    background-color: #dceef8;
-    border-radius: 15px;
-}
-
 .cuestionario p {
-    font-weight: bold;
-    margin-bottom: 10px;
-    color: #063970;
+    color: black;
 }
 
-.cuestionario label {
-    display: inline-block;
-    margin: 6px 0;
-}
-
-.cuestionario button {
-    background-color: #087eae;
+.cuestionario h2 {
     color: white;
-    padding: 13px 25px;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    font-size: 16px;
-    font-weight: bold;
-}
-
-.cuestionario button:hover {
-    background-color: #032b50;
-}
-
-#resultado {
-    color: #075080;
-    margin-top: 20px;
-}
-/* CURIOSIDADES */
-.curiosidades {
-    background-color: #dceef8;
-    border-radius: 15px;
-}
-
-/* FUNDAMENTOS */
-.fundamentos {
-    background-color: white;
-    border-radius: 15px;
-}
-
-/* CUESTIONARIO */
-.cuestionario {
-    background-color: #dceef8;
-    border-radius: 15px;
-}
-
-.cuestionario p {
-    font-weight: bold;
-    margin-bottom: 10px;
-    color: #063970;
-}
-
-.cuestionario label {
-    display: inline-block;
-    margin: 6px 0;
-}
-
-.cuestionario button {
-    background-color: #087eae;
-    color: white;
-    padding: 13px 25px;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    font-size: 16px;
-    font-weight: bold;
-}
-
-.cuestionario button:hover {
-    background-color: #032b50;
-}
-
-#resultado {
-    color: #075080;
-    margin-top: 20px;
 }

@@ -1,34 +1,17 @@
-/* COLORES GENERALES */
-body {
-    font-family: Arial, sans-serif;
-    background-color: #eef5fa;
-    color: black;
-}
-
-/* TITULOS PRINCIPALES */
-h1, h2, h3 {
-    color: white;
-}
-
-/* RECUADROS PRINCIPALES */
-.article {
-    background-color: #075080;
+article {
+    background-color: #B9DDF2;
     color: black;
     padding: 25px;
     width: 300px;
     min-height: 270px;
     border-radius: 12px;
     box-shadow: 0 4px 12px #00000030;
-    border-top: 5px solid #08a6c9;
+    border-top: 5px solid #087eae;
     transition: 0.3s;
 }
 
-.article:hover {
-    transform: translateY(-7px);
-}
-
 .article h2 {
-    color: white;
+    color: #063970;
     margin-bottom: 15px;
 }
 
@@ -37,39 +20,18 @@ h1, h2, h3 {
     line-height: 1.8;
     margin-bottom: 12px;
 }
-
-/* TITULOS DE LAS SECCIONES */
-.seccion h2 {
-    color: white;
-    text-align: center;
-    margin-bottom: 25px;
-}
-
-/* SUBTITULOS DE LAS TARJETAS */
-.posiciones h3 {
-    color: white;
-    margin-bottom: 12px;
-}
-
-/* TEXTO DE LAS TARJETAS */
-.posiciones div {
-    background-color: #075080;
+posiciones div {
+    background-color: #B9DDF2;
     color: black;
     padding: 25px;
     border-radius: 12px;
     text-align: center;
 }
 
+.posiciones h3 {
+    color: #063970;
+}
+
 .posiciones p {
     color: black;
-    line-height: 1.7;
-}
-
-/* CUESTIONARIO */
-.cuestionario p {
-    color: black;
-}
-
-.cuestionario h2 {
-    color: white;
 }

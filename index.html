@@ -7,28 +7,41 @@
 <style>
   *{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',Arial,sans-serif}
   body{background:#071a3a;color:#fff;overflow-x:hidden}
-  header{background:linear-gradient(90deg,#003f88,#00b4d8,#ffbe0b);padding:22px;text-align:center;position:relative}
+  header{background:linear-gradient(90deg,#003f88,#00b4d8,#ffbe0b);padding:22px;text-align:center}
   header h1{font-size:42px;letter-spacing:2px;text-shadow:2px 2px 0 #00000033}
   header p{font-size:18px;margin-top:5px;font-weight:600}
   .pelota{font-size:70px;display:inline-block;animation:rebote 1s infinite alternate}
   @keyframes rebote{from{transform:translateY(0) rotate(0)}to{transform:translateY(-18px) rotate(30deg)}}
-  nav{background:#001d3d;display:flex;justify-content:center;gap:30px;padding:14px;position:sticky;top:0;z-index:10}
-  nav a{color:#fff;text-decoration:none;font-weight:bold;font-size:17px}
-  nav a:hover{color:#ffbe0b;border-bottom:3px solid #ffbe0b}
+  nav{background:#001d3d;display:flex;justify-content:center;gap:20px;padding:14px;position:sticky;top:0;z-index:10;flex-wrap:wrap}
+  nav a{color:#fff;text-decoration:none;font-weight:bold;font-size:16px}
+  nav a:hover{color:#ffbe0b}
   .hero{background:#fff;color:#071a3a;text-align:center;padding:45px 20px}
   .hero h2{font-size:34px;color:#003f88}
   .hero p{max-width:650px;margin:15px auto;font-size:18px;line-height:1.6}
   .btn{background:#ffbe0b;color:#000;border:none;padding:14px 28px;border-radius:30px;font-size:18px;font-weight:bold;cursor:pointer;margin-top:10px;box-shadow:0 5px 0 #c49000}
   .btn:active{transform:translateY(4px);box-shadow:none}
   .cards{display:flex;flex-wrap:wrap;justify-content:center;gap:20px;padding:35px 15px}
-  .card{background:linear-gradient(180deg,#00b4d8,#0077b6);width:300px;padding:28px;border-radius:22px;text-align:center;box-shadow:0 10px 20px #00000044;transition:.3s}
+  .card{background:linear-gradient(180deg,#00b4d8,#0077b6);width:300px;padding:28px;border-radius:22px;text-align:center;transition:.3s}
   .card:hover{transform:translateY(-10px) scale(1.03);background:linear-gradient(180deg,#ffbe0b,#fb5607)}
   .card h3{font-size:23px;margin-bottom:12px}
   .card p{line-height:1.6;font-size:16px}
   .juego{background:#ffbe0b;color:#111;text-align:center;padding:35px 20px;border-radius:25px;margin:10px 20px 30px}
-  .juego h2{font-size:28px}
   #marcador{font-size:50px;font-weight:900;margin:15px}
-  footer{text-align:center;padding:20px;background:#001d3d;font-size:14px}
+  .melissa{background:#fff;color:#111;margin:20px;border-radius:25px;padding:30px 22px;display:flex;flex-wrap:wrap;gap:20px;align-items:center}
+  .melissa img{width:260px;border-radius:20px;border:5px solid #ffbe0b;object-fit:cover}
+  .melissa-text{flex:1;min-width:260px}
+  .melissa-text h2{color:#d00000;font-size:30px}
+  .melissa-text h3{color:#003f88;margin-top:10px}
+  .melissa-text p{line-height:1.7;margin-top:10px;font-size:16px}
+  .dato{background:#ffe8a3;padding:12px;border-radius:12px;margin-top:12px;font-weight:bold}
+  .encuesta{background:linear-gradient(135deg,#ff006e,#8338ec);margin:20px;border-radius:25px;padding:30px 22px;text-align:center}
+  .encuesta h2{font-size:30px}
+  .pregunta{background:#ffffff22;padding:18px;border-radius:15px;margin:18px auto;max-width:600px;text-align:left}
+  .pregunta b{font-size:18px}
+  .pregunta label{display:block;margin:8px 0;background:#fff;color:#111;padding:10px;border-radius:10px;cursor:pointer}
+  .pregunta input{margin-right:8px}
+  #resultado{font-size:22px;font-weight:bold;margin-top:15px;background:#fff;color:#111;padding:15px;border-radius:15px;display:none}
+  footer{text-align:center;padding:20px;background:#001d3d}
 </style>
 </head>
 <body>
@@ -40,56 +53,91 @@
 </header>
 
 <nav>
-  <a href="#">Inicio</a><a href="#">Contenido</a><a href="#">Reglas</a><a href="#">Historia</a><a href="#">Galería</a>
+  <a href="#">Inicio</a><a href="#quees">¿Qué es?</a><a href="#melissa">Melissa Vargas</a><a href="#encuesta">Encuesta</a><a href="#">Galería</a>
 </nav>
 
-<div class="hero">
+<div class="hero" id="quees">
   <h2>¡Bienvenidos al mundo del voleibol!</h2>
-  <p>El voleibol es un deporte que combina habilidad, velocidad, coordinación y trabajo en equipo. Es una actividad que permite desarrollar capacidades físicas y fortalecer la amistad entre compañeros.</p>
-  <button class="btn" onclick="alert('¡A jugar! El voleibol es lo mejor 🏐')">¡Quiero jugar! 👆</button>
+  <p>El voleibol combina habilidad, velocidad, coordinación y trabajo en equipo. Es un deporte que te hace más fuerte y te deja amigos para toda la vida.</p>
 </div>
 
 <div class="cards">
-  <div class="card">
-    <h3>🏐 ¿Qué es el voleibol?</h3>
-    <p>Es un deporte en el que dos equipos se enfrentan separados por una red. Cada equipo intenta pasar el balón al campo contrario y conseguir puntos evitando que el balón toque su propio suelo.</p>
+  <div class="card"><h3>🏐 ¿Qué es?</h3><p>Dos equipos separados por una red. Tienes que pasar el balón al campo contrario y que toque el suelo para ganar el punto.</p></div>
+  <div class="card"><h3>🎯 Objetivo</h3><p>Que el balón toque el suelo del rival y que no toque el tuyo. Simple de entender, difícil de dominar.</p></div>
+  <div class="card"><h3>💪 Beneficios</h3><p>Mejora coordinación, reflejos, salto y resistencia. Y lo mejor: te enseña a jugar en equipo y a confiar en otros.</p></div>
+</div>
+
+<!-- HISTORIA MELISSA VARGAS -->
+<div class="melissa" id="melissa">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Melissa_Vargas_2024.jpg/640px-Melissa_Vargas_2024.jpg" alt="Melissa Vargas">
+  <div class="melissa-text">
+    <h2>⭐ LA HISTORIA DE MELISSA VARGAS</h2>
+    <h3>De Cuba para el mundo</h3>
+    <p><b>Nació el 16 de octubre de 1999 en Cienfuegos, Cuba.</b> Desde niña era altísima y con una fuerza que no era normal. A los 12 años ya jugaba como adulta.</p>
+    <p>A los 16 años fue la jugadora más joven en jugar un Mundial con Cuba. Pero en Cuba no la dejaban crecer, tuvo problemas con su federación y <b>se fue a jugar a Europa para cumplir su sueño.</b></p>
+    <p>Se nacionalizó turca, empezó a jugar con Turquía y se volvió <b>la mejor opuesta del mundo.</b> Hoy juega en el Fenerbahçe y es famosa por sus saques de más de 110 km/h, ¡casi como un carro en carretera!</p>
+    <div class="dato">🔥 Dato brutal: Mide 1.94 m y salta 3.26 m para rematar. Es como rematar por encima de una puerta.</div>
+    <p><b>¿Por qué la admiramos?</b> Porque no se rindió aunque le cerraron puertas. Ella es prueba de que con disciplina sí se puede.</p>
   </div>
-  <div class="card">
-    <h3>🎯 Objetivo del juego</h3>
-    <p>El objetivo principal es conseguir que el balón toque el suelo del equipo contrario. También se debe evitar que la pelota caiga en el propio campo.</p>
+</div>
+
+<!-- ENCUESTA DIVERTIDA -->
+<div class="encuesta" id="encuesta">
+  <h2>🎉 ENCUESTA: ¿Qué tipo de jugador eres?</h2>
+  <p>Responde con sinceridad, no vale mentir 😏</p>
+
+  <div class="pregunta">
+    <b>1. ¿Qué te gusta más hacer en la cancha?</b>
+    <label><input type="radio" name="p1" value="rematador"> Rematar durísimo y celebrar</label>
+    <label><input type="radio" name="p1" value="defensa"> Defender todo, no dejar caer ni una</label>
+    <label><input type="radio" name="p1" value="armador"> Armar el juego y poner pases perfectos</label>
   </div>
-  <div class="card">
-    <h3>💪 Beneficios del voleibol</h3>
-    <p>Mejora la coordinación, los reflejos, la resistencia, la agilidad y la condición física. Además, fomenta el respeto, la comunicación y el trabajo en equipo.</p>
+
+  <div class="pregunta">
+    <b>2. Si vas perdiendo 20-24, ¿qué haces?</b>
+    <label><input type="radio" name="p2" value="rematador"> Pido el balón, yo lo resuelvo</label>
+    <label><input type="radio" name="p2" value="defensa"> Me concentro y defiendo a muerte</label>
+    <label><input type="radio" name="p2" value="armador"> Animo a todos y organizo la jugada</label>
   </div>
+
+  <div class="pregunta">
+    <b>3. ¿Cuál es tu ídolo?</b>
+    <label><input type="radio" name="p3" value="rematador"> Melissa Vargas, puro poder</label>
+    <label><input type="radio" name="p3" value="defensa"> Un líbero, los que salvan todo</label>
+    <label><input type="radio" name="p3" value="armador"> Un armador, el cerebro del equipo</label>
+  </div>
+
+  <button class="btn" onclick="verResultado()">Ver mi resultado 👆</button>
+  <div id="resultado"></div>
 </div>
 
 <div class="juego">
   <h2>¡Mini juego! Haz puntos con tu equipo</h2>
-  <p>Toca el botón cada vez que tu equipo anote</p>
   <div id="marcador">0 - 0</div>
   <button class="btn" style="background:#fff" onclick="puntoMiEquipo()">¡Punto para mí! 🔥</button>
   <button class="btn" style="background:#071a3a;color:#fff" onclick="puntoRival()">Punto rival 😅</button>
   <p id="mensaje" style="margin-top:15px;font-weight:bold"></p>
 </div>
 
-<footer>Mundo Voleibol | Hecho con pasión por el deporte 🏐</footer>
+<footer>Mundo Voleibol | Hecho con pasión 🏐 | Inspirado en Melissa Vargas</footer>
 
 <script>
-  let yo = 0, rival = 0;
-  function puntoMiEquipo(){
-    yo++;
-    actualizar();
-    if(yo>=5){ document.getElementById('mensaje').innerText='¡GANASTE! Eres MVP 🏆'; yo=0; rival=0; }
-  }
-  function puntoRival(){
-    rival++;
-    actualizar();
-    if(rival>=5){ document.getElementById('mensaje').innerText='Te ganaron, ¡la revancha! 😬'; yo=0; rival=0; }
-  }
-  function actualizar(){
-    document.getElementById('marcador').innerText = yo + ' - ' + rival;
-    document.getElementById('mensaje').innerText = '';
+  let yo=0, rival=0;
+  function puntoMiEquipo(){ yo++; actualizar(); if(yo>=5){document.getElementById('mensaje').innerText='¡GANASTE! Eres MVP 🏆'; yo=0; rival=0;} }
+  function puntoRival(){ rival++; actualizar(); if(rival>=5){document.getElementById('mensaje').innerText='Te ganaron, ¡la revancha! 😬'; yo=0; rival=0;} }
+  function actualizar(){ document.getElementById('marcador').innerText=yo+' - '+rival; document.getElementById('mensaje').innerText=''; }
+
+  function verResultado(){
+    let p1=document.querySelector('input[name="p1"]:checked');
+    let p2=document.querySelector('input[name="p2"]:checked');
+    let p3=document.querySelector('input[name="p3"]:checked');
+    if(!p1||!p2||!p3){ alert('Te falta responder una pregunta 🙈'); return; }
+    let votos={rematador:0,defensa:0,armador:0};
+    votos[p1.value]++; votos[p2.value]++; votos[p3.value]++;
+    let res=document.getElementById('resultado'); res.style.display='block';
+    if(votos.rematador>=2) res.innerText='🔥 ERES REMATADOR/A ESTILO MELISSA VARGAS: Puro poder, no le tienes miedo a nada y te gusta brillar.';
+    else if(votos.defensa>=2) res.innerText='🛡️ ERES DEFENSA / LÍBERO: Eres el que salva al equipo, sin ti no se gana.';
+    else res.innerText='🧠 ERES ARMADOR/A: El cerebro del equipo, sin ti nadie anota.';
   }
 </script>
 

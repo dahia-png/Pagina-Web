@@ -1,355 +1,97 @@
 <!DOCTYPE html>
 <html lang="es">
-    
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VOLEIBOL</title>
-    <link rel="stylesheet" href="styles.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MUNDO VOLEIBOL 🏐</title>
+<style>
+  *{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',Arial,sans-serif}
+  body{background:#071a3a;color:#fff;overflow-x:hidden}
+  header{background:linear-gradient(90deg,#003f88,#00b4d8,#ffbe0b);padding:22px;text-align:center;position:relative}
+  header h1{font-size:42px;letter-spacing:2px;text-shadow:2px 2px 0 #00000033}
+  header p{font-size:18px;margin-top:5px;font-weight:600}
+  .pelota{font-size:70px;display:inline-block;animation:rebote 1s infinite alternate}
+  @keyframes rebote{from{transform:translateY(0) rotate(0)}to{transform:translateY(-18px) rotate(30deg)}}
+  nav{background:#001d3d;display:flex;justify-content:center;gap:30px;padding:14px;position:sticky;top:0;z-index:10}
+  nav a{color:#fff;text-decoration:none;font-weight:bold;font-size:17px}
+  nav a:hover{color:#ffbe0b;border-bottom:3px solid #ffbe0b}
+  .hero{background:#fff;color:#071a3a;text-align:center;padding:45px 20px}
+  .hero h2{font-size:34px;color:#003f88}
+  .hero p{max-width:650px;margin:15px auto;font-size:18px;line-height:1.6}
+  .btn{background:#ffbe0b;color:#000;border:none;padding:14px 28px;border-radius:30px;font-size:18px;font-weight:bold;cursor:pointer;margin-top:10px;box-shadow:0 5px 0 #c49000}
+  .btn:active{transform:translateY(4px);box-shadow:none}
+  .cards{display:flex;flex-wrap:wrap;justify-content:center;gap:20px;padding:35px 15px}
+  .card{background:linear-gradient(180deg,#00b4d8,#0077b6);width:300px;padding:28px;border-radius:22px;text-align:center;box-shadow:0 10px 20px #00000044;transition:.3s}
+  .card:hover{transform:translateY(-10px) scale(1.03);background:linear-gradient(180deg,#ffbe0b,#fb5607)}
+  .card h3{font-size:23px;margin-bottom:12px}
+  .card p{line-height:1.6;font-size:16px}
+  .juego{background:#ffbe0b;color:#111;text-align:center;padding:35px 20px;border-radius:25px;margin:10px 20px 30px}
+  .juego h2{font-size:28px}
+  #marcador{font-size:50px;font-weight:900;margin:15px}
+  footer{text-align:center;padding:20px;background:#001d3d;font-size:14px}
+</style>
 </head>
-
 <body>
 
 <header>
-    <h1>🏐MUNDO VOLEIBOL</h1>
-<p>Pasion, diciplina y trabajo en equipo</p>
-<header>
-    <nav>
-    
-    <ul>
-        <li><a href="#">Inicio</a></li>
-        <li><a href="#">Contenido</a></li>
-        <li><a href="#">Reglas</a></li>
-        <li><a href="#">Historia</a></li>
-        <li><a href="#">Galeria</a></li>
-    </ul>
+  <span class="pelota">🏐</span>
+  <h1>MUNDO VOLEIBOL</h1>
+  <p>Pasión, disciplina y trabajo en equipo</p>
+</header>
+
+<nav>
+  <a href="#">Inicio</a><a href="#">Contenido</a><a href="#">Reglas</a><a href="#">Historia</a><a href="#">Galería</a>
 </nav>
 
-<section id="inicio" class="bienvenida">
-    <h2>¡Bienvenidos al mundo del voleibol!</h2>
-    <p>
-        El voleibol es un deporte que combina habilidad,
-        velocidad, coordinación y trabajo en equipo.
-        Es una actividad que permite desarrollar capacidades
-        físicas y fortalecer la amistad entre compañeros.
-    </p>
-</section>
+<div class="hero">
+  <h2>¡Bienvenidos al mundo del voleibol!</h2>
+  <p>El voleibol es un deporte que combina habilidad, velocidad, coordinación y trabajo en equipo. Es una actividad que permite desarrollar capacidades físicas y fortalecer la amistad entre compañeros.</p>
+  <button class="btn" onclick="alert('¡A jugar! El voleibol es lo mejor 🏐')">¡Quiero jugar! 👆</button>
+</div>
 
-    <section id="contenido" class="contenedor">
+<div class="cards">
+  <div class="card">
+    <h3>🏐 ¿Qué es el voleibol?</h3>
+    <p>Es un deporte en el que dos equipos se enfrentan separados por una red. Cada equipo intenta pasar el balón al campo contrario y conseguir puntos evitando que el balón toque su propio suelo.</p>
+  </div>
+  <div class="card">
+    <h3>🎯 Objetivo del juego</h3>
+    <p>El objetivo principal es conseguir que el balón toque el suelo del equipo contrario. También se debe evitar que la pelota caiga en el propio campo.</p>
+  </div>
+  <div class="card">
+    <h3>💪 Beneficios del voleibol</h3>
+    <p>Mejora la coordinación, los reflejos, la resistencia, la agilidad y la condición física. Además, fomenta el respeto, la comunicación y el trabajo en equipo.</p>
+  </div>
+</div>
 
-    <article class="article">
-        <h2>🏐¿Qué es el voleibol?</h2>
-        <p>
-            Es un deporte en el que dos equipos se enfrentan
-            separados por una red. Cada equipo intenta pasar
-            el balón al campo contrario y conseguir puntos
-            evitando que el balón toque su propio suelo.
-        </p>
-    </article>
+<div class="juego">
+  <h2>¡Mini juego! Haz puntos con tu equipo</h2>
+  <p>Toca el botón cada vez que tu equipo anote</p>
+  <div id="marcador">0 - 0</div>
+  <button class="btn" style="background:#fff" onclick="puntoMiEquipo()">¡Punto para mí! 🔥</button>
+  <button class="btn" style="background:#071a3a;color:#fff" onclick="puntoRival()">Punto rival 😅</button>
+  <p id="mensaje" style="margin-top:15px;font-weight:bold"></p>
+</div>
 
-        <article class="article">
-        <h2>🎯 Objetivo del juego</h2>
-        <p>
-            El objetivo principal es conseguir que el balón
-            toque el suelo del equipo contrario. También se
-            debe evitar que la pelota caiga en el propio campo.
-        </p>
-    </article>
+<footer>Mundo Voleibol | Hecho con pasión por el deporte 🏐</footer>
 
-           <article class="article">
-        <h2>💪 Beneficios del voleibol</h2>
-        <p>
-            Mejora la coordinación, los reflejos, la resistencia,
-            la agilidad y la condición física. Además, fomenta
-            el respeto, la comunicación y el trabajo en equipo.
-        </p>
-    </article>
-
-        </section>
-
-<section id="reglas" class="seccion">
-    <h2>📋 Reglas básicas del voleibol</h2>
-
-    <ul>
-        <li>Cada equipo puede tener seis jugadores en la cancha.</li>
-        <li>Un equipo puede realizar máximo tres toques antes de pasar el balón.</li>
-        <li>Un jugador no puede tocar dos veces consecutivas el balón, salvo excepciones reglamentarias.</li>
-        <li>Los jugadores deben realizar una rotación cuando recuperan el saque.</li>
-        <li>El balón no debe tocar el suelo dentro del propio campo.</li>
-        <li>Un set normalmente se juega a 25 puntos, con diferencia mínima de dos.</li>
-        <li>El partido generalmente se juega al mejor de cinco sets.</li>
-    </ul>
-</section>
-
-    <section id="historia" class="seccion">
-    <h2>📖 Historia del voleibol</h2>
-
-    <p>
-        El voleibol fue creado en 1895 por William G. Morgan,
-        un profesor de educación física estadounidense.
-        Inicialmente recibió el nombre de Mintonette.
-        Su intención era crear un deporte que combinara
-        actividad física y diversión.
-    </p>
-
-          <p>
-        Con el paso del tiempo, el deporte se popularizó
-        en diferentes países y se convirtió en una disciplina
-        internacional. En 1964 hizo su debut como deporte
-        olímpico en los Juegos Olímpicos de Tokio.
-    </p>
-</section>
-
-    <section class="seccion">
-    <h2>⭐ Posiciones de los jugadores</h2>
-
-    <div class="posiciones">
-        <div>
-            <h3>Colocador</h3>
-            <p>Organiza las jugadas y prepara el balón para el ataque.</p>
-        </div>
-
-        <div>
-            <h3>Libero</h3>
-            <p>Se especializa en la defensa y recepción del balón.</p>
-        </div>
-
-        <div>
-            <h3>Rematador</h3>
-            <p>Realiza ataques para conseguir puntos.</p>
-        </div>
-
-        <div>
-            <h3>Central</h3>
-            <p>Participa principalmente en los bloqueos y ataques rápidos.</p>
-        </div>
-    </div>
-</section>
-
-    <section id="galeria" class="seccion">
-    <h2>📸 Galería de voleibol</h2>
-
-    <div class="galeria">
-        <img src="a.jpg" alt="Partido de voleibol">
-        <img src="b.jpg" alt="Jugadores de voleibol">
-        <img src="c.jpg" alt="Balón de voleibol">
-        <img src="https://images.unsplash.com/photo-1612872087720-bb876e2e67d1?w=600" alt="Partido de voleibol">
-        <img src="https://images.unsplash.com/photo-1592656094267-764a45160876?w=600" alt="Jugadores en la cancha">
-    </div>
-</section>
-
-    <section class="seccion video">
-    <h2>🎥 Conoce más sobre el voleibol</h2>
-
-    <iframe
-        src="https://www.youtube.com/embed/9j2j4fWl3xg"
-        title="Video de voleibol"
-        allowfullscreen>
-    </iframe>
-</section>
-
-    <footer>
-    <h3>🏐 MUNDO VOLEIBOL</h3>
-    <p>El éxito se consigue jugando en equipo.</p>
-    <p>Proyecto escolar de tecnología | 2026</p>
-</footer>
+<script>
+  let yo = 0, rival = 0;
+  function puntoMiEquipo(){
+    yo++;
+    actualizar();
+    if(yo>=5){ document.getElementById('mensaje').innerText='¡GANASTE! Eres MVP 🏆'; yo=0; rival=0; }
+  }
+  function puntoRival(){
+    rival++;
+    actualizar();
+    if(rival>=5){ document.getElementById('mensaje').innerText='Te ganaron, ¡la revancha! 😬'; yo=0; rival=0; }
+  }
+  function actualizar(){
+    document.getElementById('marcador').innerText = yo + ' - ' + rival;
+    document.getElementById('mensaje').innerText = '';
+  }
+</script>
 
 </body>
 </html>
-
-    <section class="seccion curiosidades">
-    <h2>🤩 Curiosidades del voleibol</h2>
-
-    <div class="posiciones">
-        <div>
-            <h3>1895</h3>
-            <p>Fue el año en que William G. Morgan creó el voleibol.</p>
-        </div>
-
-        <div>
-            <h3>6 jugadores</h3>
-            <p>Cada equipo tiene seis jugadores en la cancha.</p>
-        </div>
-
-        <div>
-            <h3>Deporte olímpico</h3>
-            <p>El voleibol ingresó a los Juegos Olímpicos en 1964.</p>
-        </div>
-
-        <div>
-            <h3>El líbero</h3>
-            <p>Es un jugador especializado en defensa y recepción que utiliza un uniforme diferente.</p>
-        </div>
-    </div>
-</section>
-
-    <section class="seccion fundamentos">
-    <h2>🏐 Fundamentos técnicos del voleibol</h2>
-
-    <div class="posiciones">
-
-        <div>
-            <h3>1. Saque</h3>
-            <p>Es el golpe que permite iniciar el juego enviando el balón al campo contrario.</p>
-        </div>
-
-        <div>
-            <h3>2. Recepción</h3>
-            <p>Consiste en recibir el balón, generalmente después del saque del equipo contrario.</p>
-        </div>
-
-        <div>
-            <h3>3. Voleo</h3>
-            <p>Es una técnica que utiliza principalmente las manos y los dedos para dirigir el balón.</p>
-        </div>
-
-        <div>
-            <h3>4. Remate</h3>
-            <p>Es un golpe de ataque fuerte que busca conseguir un punto.</p>
-        </div>
-
-        <div>
-            <h3>5. Bloqueo</h3>
-            <p>Es una acción defensiva que busca detener o desviar el ataque del equipo contrario.</p>
-        </div>
-
-    </div>
-</section>
-
-    <section class="seccion cuestionario">
-    <h2>🧠 ¿Cuánto sabes de voleibol?</h2>
-
-    <form id="quiz">
-
-        <p>1. ¿Cuántos jugadores tiene cada equipo en la cancha?</p>
-        <label><input type="radio" name="p1" value="a"> 5 jugadores</label><br>
-        <label><input type="radio" name="p1" value="b"> 6 jugadores</label><br>
-        <label><input type="radio" name="p1" value="c"> 8 jugadores</label>
-
-        <br><br>
-
-        <p>2. ¿Quién creó el voleibol?</p>
-        <label><input type="radio" name="p2" value="a"> William G. Morgan</label><br>
-        <label><input type="radio" name="p2" value="b"> James Naismith</label><br>
-        <label><input type="radio" name="p2" value="c"> Pelé</label>
-
-        <br><br>
-
-        <p>3. ¿Cuántos toques puede realizar un equipo antes de pasar el balón?</p>
-        <label><input type="radio" name="p3" value="a"> Dos</label><br>
-        <label><input type="radio" name="p3" value="b"> Tres</label><br>
-        <label><input type="radio" name="p3" value="c"> Cuatro</label>
-
-        <br><br>
-
-        <p>4. ¿Cuál es la función principal del líbero?</p>
-        <label><input type="radio" name="p4" value="a"> Defensa y recepción</label><br>
-        <label><input type="radio" name="p4" value="b"> Realizar todos los saques</label><br>
-        <label><input type="radio" name="p4" value="c"> Ser el árbitro</label>
-
-        <br><br>
-
-        <button type="button" onclick="calificar()">Comprobar respuestas</button>
-
-        <h3 id="resultado"></h3>
-
-    </form>
-</section>
-
-<script>
-function calificar() {
-
-    let respuestas = {
-        p1: "b",
-        p2: "a",
-        p3: "b",
-        p4: "a"
-    };
-
-    let puntos = 0;
-
-    for (let pregunta in respuestas) {
-        let seleccion = document.querySelector(
-            'input[name="' + pregunta + '"]:checked'
-        );
-
-        if (seleccion && seleccion.value === respuestas[pregunta]) {
-            puntos++;
-        }
-    }
-
-    document.getElementById("resultado").textContent =
-        "Obtuviste " + puntos + " de 4 respuestas correctas. " +
-        (puntos === 4 ? "¡Excelente trabajo! 🏆" : "¡Sigue aprendiendo! 🏐");
-}
-</script>
-
-    <section id="contenido" class="contenedor">
-
-       <section id="melissa" class="seccion melissa">
-
-    <h2>🌟 Historia de Melissa Vargas</h2>
-
-    <div class="melissa-contenido">
-
-        <img src="melisa.jpg">
-
-        <div class="melissa-texto">
-
-            <h3>¿Quién es Melissa Vargas?</h3>
-
-            <p>
-            Melissa Teresa Vargas Abreu nació el 16 de octubre
-            de 1999 en Cienfuegos, Cuba. Es una reconocida
-            jugadora profesional de voleibol que se desempeña
-            principalmente como opuesta.
-            </p>
-
-            <p>
-            Desde pequeña mostró un gran talento para este
-            deporte. Comenzó a practicar voleibol durante
-            su infancia y, gracias a sus habilidades, llegó
-            a integrar la selección nacional de Cuba cuando
-            tenía apenas 13 años.
-            </p>
-
-            <h3>Su trayectoria deportiva</h3>
-
-            <p>
-            A lo largo de su carrera jugó en diferentes países,
-            como República Checa, Suiza, Turquía y China.
-            Su talento, potencia en los remates y capacidad
-            para conseguir puntos la llevaron a convertirse
-            en una de las figuras importantes del voleibol
-            femenino internacional.
-            </p>
-
-            <p>
-            En 2021 obtuvo la nacionalidad turca y en 2023
-            comenzó a representar a Turquía en competencias
-            internacionales.
-            </p>
-
-            <h3>🏆 Sus principales logros</h3>
-
-            <ul>
-                <li>Campeona de la Liga de Naciones 2023 con Turquía.</li>
-                <li>Campeona del Campeonato Europeo 2023.</li>
-                <li>Elegida como jugadora más valiosa (MVP) en ambos torneos de 2023.</li>
-                <li>Medallista de plata en el Mundial de 2025.</li>
-            </ul>
-
-            <h3>Una deportista inspiradora</h3>
-
-            <p>
-            Melissa Vargas es un ejemplo de disciplina,
-            perseverancia y dedicación. Su historia demuestra
-            que el esfuerzo y la preparación son importantes
-            para alcanzar grandes objetivos en el deporte.
-            </p>
-
-        </div>
-    </div>
-</section> 
-
-

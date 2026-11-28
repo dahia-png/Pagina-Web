@@ -1,309 +1,220 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@400;700;900&display=swap');
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    scroll-behavior: smooth;
 }
 
 body {
-    font-family: Arial, sans-serif;
-    background-color: #eef5fa;
-    color: black;
+    background-color: #f0f0f0;
+    color: #333;
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
 }
 
-/* ENCABEZADO */
 header {
-    background: linear-gradient(135deg, #063970, #087eae);
+    background-color: #005f73;
     color: white;
+    padding: 20px;
     text-align: center;
-    padding: 45px 20px;
 }
 
 header h1 {
     color: white;
-    font-size: 40px;
+    font-size: 55px;
     letter-spacing: 3px;
+    font-family: 'Bebas Neue', sans-serif;
+    line-height: 1;
 }
 
 header p {
-    color: white;
-    margin-top: 12px;
     font-size: 18px;
+    font-weight: 700;
 }
 
-/* MENÚ */
 nav {
-    background-color: #032b50;
-    padding: 17px;
-}
-
-nav ul {
-    list-style: none;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 30px;
+    background-color: #003f4d;
+    padding: 12px;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 10;
 }
 
 nav a {
     color: white;
     text-decoration: none;
-    font-weight: bold;
-    transition: 0.3s;
+    margin: 0 15px;
+    font-weight: 700;
+    font-size: 16px;
 }
 
 nav a:hover {
-    color: #ffdc60;
+    color: #ffbe0b;
 }
 
-/* BIENVENIDA */
-.bienvenida {
+.hero {
+    background: #fff;
     text-align: center;
-    padding: 55px 20px;
-    background-color: #dceef8;
+    padding: 45px 20px;
 }
 
-.bienvenida h2 {
-    color: #063970;
-    margin-bottom: 20px;
-    font-size: 28px;
+.hero h2 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 42px;
+    letter-spacing: 2px;
+    color: #003f88;
 }
 
-.bienvenida p {
-    color: black;
-    max-width: 800px;
-    margin: auto;
-    line-height: 1.8;
+.hero p {
+    max-width: 650px;
+    margin: 15px auto;
+    font-size: 18px;
 }
 
-/* RECUADROS PRINCIPALES */
-.contenedor {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 25px;
-    padding: 40px 20px;
-}
-
-.article {
-    background-color: #087eae;
-    padding: 25px;
-    width: 300px;
-    min-height: 270px;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px #00000020;
-    border-top: 5px solid #ffdc60;
-    transition: 0.3s;
-}
-
-.article:hover {
-    transform: translateY(-7px);
-}
-
-.article h2 {
-    color: white;
-    margin-bottom: 15px;
-}
-
-.article p {
-    color: black;
-    line-height: 1.8;
-    margin-bottom: 12px;
-}
-
-/* SECCIONES */
-.seccion {
-    padding: 45px 30px;
-    margin: 20px auto;
-    max-width: 1100px;
-    background-color: #dceef8;
-    border-radius: 15px;
-}
-
-.seccion h2 {
-    color: #063970;
-    text-align: center;
-    margin-bottom: 25px;
-    font-size: 28px;
-}
-
-.seccion p,
-.seccion li {
-    color: black;
-    line-height: 2;
-}
-
-/* POSICIONES Y TARJETAS */
-.posiciones {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 20px;
-}
-
-.posiciones div {
-    background-color: #087eae;
-    padding: 25px;
-    border-radius: 12px;
-    text-align: center;
-    box-shadow: 0 3px 10px #00000020;
-}
-
-.posiciones h3 {
-    color: white;
-    margin-bottom: 12px;
-}
-
-.posiciones p {
-    color: black;
-}
-
-/* GALERÍA */
-.galeria {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 18px;
-}
-
-.galeria img {
-    width: 100%;
-    height: 220px;
-    object-fit: cover;
-    border-radius: 12px;
-    transition: 0.3s;
-}
-
-.galeria img:hover {
-    transform: scale(1.04);
-}
-
-/* VIDEO */
-.video {
-    text-align: center;
-}
-
-.video iframe {
-    width: 100%;
-    max-width: 700px;
-    height: 390px;
+.btn {
+    background: #ffbe0b;
+    color: #000;
     border: none;
-    border-radius: 15px;
-}
-
-/* CUESTIONARIO */
-.cuestionario {
-    background-color: #dceef8;
-}
-
-.cuestionario p {
-    color: black;
-    font-weight: bold;
-    margin-bottom: 10px;
-}
-
-.cuestionario label {
-    color: black;
-    display: inline-block;
-    margin: 6px 0;
-}
-
-.cuestionario button {
-    background-color: #087eae;
-    color: white;
-    padding: 13px 25px;
-    border: none;
-    border-radius: 8px;
+    padding: 14px 28px;
+    border-radius: 30px;
+    font-size: 18px;
+    font-weight: 700;
     cursor: pointer;
-    font-size: 16px;
-    font-weight: bold;
+    margin-top: 10px;
 }
 
-.cuestionario button:hover {
-    background-color: #032b50;
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 35px 15px;
+}
+
+.card {
+    background: linear-gradient(180deg, #00b4d8, #0077b6);
+    color: white;
+    width: 300px;
+    padding: 28px;
+    border-radius: 22px;
+    text-align: center;
+}
+
+.card h3 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 30px;
+    letter-spacing: 1px;
+    margin-bottom: 12px;
+}
+
+.melissa {
+    background: #fff;
+    margin: 20px;
+    border-radius: 25px;
+    padding: 30px 22px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    align-items: center;
+}
+
+.melissa img {
+    width: 260px;
+    border-radius: 20px;
+    border: 5px solid #ffbe0b;
+    object-fit: cover;
+}
+
+.melissa-text {
+    flex: 1;
+    min-width: 260px;
+}
+
+.melissa-text h2 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 38px;
+    letter-spacing: 1px;
+    color: #d00000;
+}
+
+.melissa-text h3 {
+    color: #003f88;
+    margin-top: 10px;
+}
+
+.dato {
+    background: #ffe8a3;
+    padding: 12px;
+    border-radius: 12px;
+    margin-top: 12px;
+    font-weight: 700;
+}
+
+.encuesta {
+    background: linear-gradient(135deg, #ff006e, #8338ec);
+    color: white;
+    margin: 20px;
+    border-radius: 25px;
+    padding: 30px 22px;
+    text-align: center;
+}
+
+.encuesta h2 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 38px;
+    letter-spacing: 1px;
+}
+
+.pregunta {
+    background: #ffffff22;
+    padding: 18px;
+    border-radius: 15px;
+    margin: 18px auto;
+    max-width: 600px;
+    text-align: left;
+}
+
+.pregunta label {
+    display: block;
+    margin: 8px 0;
+    background: #fff;
+    color: #111;
+    padding: 10px;
+    border-radius: 10px;
+    cursor: pointer;
 }
 
 #resultado {
-    color: #063970;
-    margin-top: 20px;
+    font-size: 20px;
+    font-weight: 700;
+    margin-top: 15px;
+    background: #fff;
+    color: #111;
+    padding: 15px;
+    border-radius: 15px;
+    display: none;
 }
 
-/* PIE DE PÁGINA */
+.juego {
+    background: #ffbe0b;
+    color: #111;
+    text-align: center;
+    padding: 35px 20px;
+    border-radius: 25px;
+    margin: 10px 20px 30px;
+}
+
+#marcador {
+    font-size: 50px;
+    font-weight: 900;
+    margin: 15px;
+}
+
 footer {
-    background-color: #032b50;
-    color: white;
     text-align: center;
-    padding: 30px;
-    line-height: 2;
-}
-
-footer p,
-footer h3 {
+    padding: 20px;
+    background: #001d3d;
     color: white;
-}
-
-/* ADAPTACIÓN A CELULARES */
-@media (max-width: 600px) {
-
-    header h1 {
-        font-size: 28px;
-    }
-
-    nav ul {
-        gap: 15px;
-    }
-
-    .video iframe {
-        height: 230px;
-    }
-
-    .seccion {
-        padding: 30px 18px;
-    }
-}
-
-/* HISTORIA DE MELISSA VARGAS */
-
-.melissa {
-    background-color: #dceef8;
-    border-radius: 15px;
-}
-
-.melissa h2 {
-    color: #063970;
-    text-align: center;
-    margin-bottom: 30px;
-}
-
-.melissa-contenido {
-    display: flex;
-    align-items: flex-start;
-    gap: 30px;
-    flex-wrap: wrap;
-}
-
-.melissa-contenido img {
-    width: 300px;
-    max-width: 100%;
-    border-radius: 15px;
-    box-shadow: 0 4px 12px #00000030;
-}
-
-.melissa-texto {
-    flex: 1;
-    min-width: 250px;
-}
-
-.melissa-texto h3 {
-    color: #087eae;
-    margin: 20px 0 12px;
-}
-
-.melissa-texto p {
-    color: black;
-    line-height: 1.8;
-    margin-bottom: 15px;
-}
-
-.melissa-texto li {
-    color: black;
-    line-height: 2;
 }

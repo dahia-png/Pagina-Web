@@ -141,8 +141,13 @@
   </div>
 
   <button class="btn" onclick="verResultado()">Ver mi resultado 👆</button>
-  <div id="resultado"></div>
-</div>
+  <div id="resultado" style="display:none">
+    <img id="fotoResultado" src="" style="width:100%; max-width:350px; border-radius:15px; display:block; margin:0 auto 15px; border:4px solid #c8ff00">
+    <p id="textoResultado" style="font-size:19px; font-weight:700; color:#111"></p>
+    <p id="jugadoraResultado" style="font-size:14px; color:#7b00ff; font-weight:900; margin-top:8px"></p>
+    <button class="btn" onclick="compartir()" style="margin-top:12px; background:#fff; border:2px solid #7b00ff">📲 Compartir mi resultado</button>
+  </div>
+  
   
 <!-- CALENDARIO + JUEGO -->
 <div class="doble">
@@ -162,6 +167,63 @@
     <p id="mensaje"></p>
   </div>
 </div>
+  <script>
+let yo=0, rival=0;
+function puntoMiEquipo(){ yo++; actualizar(); if(yo>=5){document.getElementById('mensaje').innerText='¡GANASTE! Eres MVP 🏆'; yo=0; rival=0;} }
+function puntoRival(){ rival++; actualizar(); if(rival>=5){document.getElementById('mensaje').innerText='Te ganaron, ¡la revancha! 😬'; yo=0; rival=0;} }
+function actualizar(){ document.getElementById('marcador').innerText=yo+' - '+rival; document.getElementById('mensaje').innerText=''; }
+
+let miResultadoTexto = "";
+function verResultado(){
+  let faltan = 0;
+  let votos = {rematador:0, defensa:0, armador:0, central:0};
+  for(let i=1; i<=8; i++){
+    let sel = document.querySelector('input[name="p'+i+'"]:checked');
+    if(!sel){ faltan++; } else { votos[sel.value]++; }
+  }
+  if(faltan>0){ alert('Te faltan '+faltan+' preguntas por responder 🙈'); return; }
+
+  let res = document.getElementById('resultado');
+  let foto = document.getElementById('fotoResultado');
+  let texto = document.getElementById('textoResultado');
+  let jugadora = document.getElementById('jugadoraResultado');
+  res.style.display='block';
+  res.scrollIntoView({behavior:'smooth'});
+
+  let max = Math.max(votos.rematador, votos.defensa, votos.armador, votos.central);
+
+  if(votos.rematador === max){
+    foto.src = 'melissa.jpg';
+    texto.innerText = '🔥 ERES REMATADORA ESTILO MELISSA VARGAS: Puro poder, no le tienes miedo a nada. Tu lugar es en la punta, rompiéndola.';
+    jugadora.innerText = 'TU ÍDOLA: MELISSA VARGAS 🇹🇷';
+    miResultadoTexto = 'Soy Rematadora estilo Melissa Vargas 🔥 ¿Y tú? Haz el quiz en Mundo Voleibol';
+  } else if(votos.defensa === max){
+    foto.src = 'https://images.unsplash.com/photo-1612872087720-bb876e2e67d1?w=800&q=80';
+    texto.innerText = '🛡️ ERES DEFENSA / LÍBERO: Eres la que salva al equipo, sin ti no se gana. La humilde pero la más importante.';
+    jugadora.innerText = 'TU ÍDOLA: LAS LÍBEROS, LAS QUE SALVAN TODO';
+    miResultadoTexto = 'Soy Defensa / Líbero 🛡️ ¿Y tú? Haz el quiz en Mundo Voleibol';
+  } else if(votos.armador === max){
+    foto.src = 'https://images.unsplash.com/photo-1547347298-4074fc3086f0?w=800&q=80';
+    texto.innerText = '🧠 ERES ARMADORA: El cerebro del equipo, sin ti nadie anota. Tú mandas en la cancha.';
+    jugadora.innerText = 'TU ÍDOLA: LAS ARMADORAS, EL CEREBRO DEL EQUIPO';
+    miResultadoTexto = 'Soy Armadora, el cerebro del equipo 🧠 ¿Y tú? Haz el quiz en Mundo Voleibol';
+  } else {
+    foto.src = 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800&q=80';
+    texto.innerText = '🧱 ERES CENTRAL / MURO: Gigante en la red, nadie pasa por ti. Te tienen miedo los rivales 😤';
+    jugadora.innerText = 'TU ÍDOLA: ZEHRA GÜNEŞ, MURO GIGANTE 🇹🇷';
+    miResultadoTexto = 'Soy Central / Muro 🧱 ¿Y tú? Haz el quiz en Mundo Voleibol';
+  }
+}
+
+function compartir(){
+  if(navigator.share){
+    navigator.share({title:'Mi resultado - Mundo Voleibol', text: miResultadoTexto, url: window.location.href});
+  } else {
+    navigator.clipboard.writeText(miResultadoTexto + ' ' + window.location.href);
+    alert('¡Copiado! Pégalo en WhatsApp o TikTok 📲');
+  }
+}
+</script>
 
 <div class="frase">“NO SE TRATA DE SER LA MÁS ALTA, SINO LA QUE MÁS SALTA Y MÁS LUCHA”<br><span>- Mundo Voleibol 💜</span></div>
 
